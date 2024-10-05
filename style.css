@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #282c34; 
+    color: #fff;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.container-1 {
+    font-size: 6em;
+}
+
+.container-2 {
+    font-size: 4em; 
+}
+
+.container-3 {
+    font-size: 2em;
+}
+
+.space {
+    display: none;
+}
+
+@media (max-width: 992px) {
+
+    .container-1 {
+        margin-top: 20px !important;
+        font-size: 2.5em;
+    }
+    
+    .container-2 {
+        font-size: 4em; 
+    }
+    
+    .container-3 {
+        font-size: 2em;
+    }
+
+    .space {
+        display: block;
+    }   
+}
