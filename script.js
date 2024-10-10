@@ -18,7 +18,37 @@ function aikaLaskuri() {
     document.getElementById('tunnit').innerHTML = tunnit;
     document.getElementById('minuutit').innerHTML = minuutit;
     document.getElementById('sekunnit').innerHTML = sekunnit;
-}
 
-setInterval(aikaLaskuri, 1000);
+    if (yot == 1) {
+        document.getElementById('yo').innerHTML = " yö"
+    } else {
+        document.getElementById('yo').innerHTML = " yötä"
+    }
+
+    if (paivat == 1) {
+        document.getElementById('pva').innerHTML = " päivä"
+    } else {
+        document.getElementById('pva').innerHTML = " päivää"
+    }
+
+    if (tunnit == 1) {
+        document.getElementById('tun').innerHTML = " tunti"
+    } else {
+        document.getElementById('tun').innerHTML = " tuntia"
+    }
+
+    if (minuutit == 1) {
+        document.getElementById('min').innerHTML = " minuutti"
+    } else {
+        document.getElementById('min').innerHTML = " minuuttia"
+    }
+
+    if (sekunnit == 1) {
+        document.getElementById('sek').innerHTML = " sekunti"
+    } else {
+        document.getElementById('sek').innerHTML = " sekuntia"
+    }
+}  
+
+setInterval(aikaLaskuri, 1000); 
 aikaLaskuri();
