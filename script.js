@@ -1,7 +1,7 @@
 function aikaLaskuri() {
     const nytHetki = new Date();
     const kuluvaVuosi = nytHetki.getFullYear();
-    const jouluaatto = new Date(`December 24, ${kuluvaVuosi} 00:00:00`);
+    const jouluaatto = new Date(`Decenber 24, ${kuluvaVuosi} 00:00:00`);
 
     if (nytHetki > jouluaatto) {
         jouluaatto.setFullYear(kuluvaVuosi + 1);
@@ -19,8 +19,10 @@ function aikaLaskuri() {
     document.getElementById('minuutit').innerHTML = minuutit;
     document.getElementById('sekunnit').innerHTML = sekunnit;
 
-    if (yot == 1) {
+    if (paivat == 0) {
         document.getElementById('yo').innerHTML = " yö"
+        document.getElementById('paivat').style = "display: none"
+        document.getElementById('pva').style = "display: none"
     } else {
         document.getElementById('yo').innerHTML = " yötä"
     }
