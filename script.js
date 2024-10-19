@@ -9,7 +9,7 @@ function aikaLaskuri() {
 
     const kaikkiSekunnit = (jouluaatto - nytHetki) / 1000;
     const paivat = Math.floor(kaikkiSekunnit / 3600 / 24);
-    const tunnit = Math.floor(kaikkiSekunnit / 3600) % 24;
+    const tunnit = Math.floor(kaikkiSekunnit / 3600) % 24 - 1;
     const minuutit = Math.floor(kaikkiSekunnit / 60) % 60;
     const sekunnit = Math.floor(kaikkiSekunnit) % 60;
 
@@ -52,7 +52,7 @@ function aikaLaskuri() {
     }
 
     if (tunnit == 0) {
-        document.getElementById('tunnit').style = "display: none"
+        document.getElementById('tunnit').innerHTML = " -----------"
         document.getElementById('tun').style = "display: none"
     } else {
         document.getElementById('sekunnit').style = "display: span"
@@ -66,7 +66,7 @@ function aikaLaskuri() {
     }
 
     if (minuutit == 0) {
-        document.getElementById('minuutit').style = "display: none"
+        document.getElementById('minuutit').innerHTML = " -----------"
         document.getElementById('min').style = "display: none"
     } else {
         document.getElementById('minuutit').style = "display: span"
@@ -80,7 +80,7 @@ function aikaLaskuri() {
     }
 
     if (sekunnit == 0) {
-        document.getElementById('sekunnit').style = "display: none"
+        document.getElementById('sekunnit').innerHTML = " -----------"
         document.getElementById('sek').style = "display: none"
     } else {
         document.getElementById('sekunnit').style = "display: span"
