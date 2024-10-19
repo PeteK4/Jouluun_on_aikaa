@@ -37,10 +37,26 @@ function aikaLaskuri() {
         document.getElementById('yo').innerHTML = " yötä"
     }
 
+    if (paivat == 0) {
+        document.getElementById('paivat').style = "display: none"
+        document.getElementById('pva').style = "display: none"
+    } else {
+        document.getElementById('sekunnit').style = "display: span"
+        document.getElementById('sek').style = "display: span"
+    }
+
     if (paivat == 1) {
         document.getElementById('pva').innerHTML = " päivä"
     } else {
         document.getElementById('pva').innerHTML = " päivää"
+    }
+
+    if (tunnit == 0) {
+        document.getElementById('tunnit').style = "display: none"
+        document.getElementById('tun').style = "display: none"
+    } else {
+        document.getElementById('sekunnit').style = "display: span"
+        document.getElementById('sek').style = "display: span"
     }
 
     if (tunnit == 1) {
@@ -49,16 +65,32 @@ function aikaLaskuri() {
         document.getElementById('tun').innerHTML = " tuntia"
     }
 
+    if (minuutit == 0) {
+        document.getElementById('minuutit').style = "display: none"
+        document.getElementById('min').style = "display: none"
+    } else {
+        document.getElementById('minuutit').style = "display: span"
+        document.getElementById('min').style = "display: span"
+    }
+
     if (minuutit == 1) {
         document.getElementById('min').innerHTML = " minuutti"
     } else {
         document.getElementById('min').innerHTML = " minuuttia"
     }
 
+    if (sekunnit == 0) {
+        document.getElementById('sekunnit').style = "display: none"
+        document.getElementById('sek').style = "display: none"
+    } else {
+        document.getElementById('sekunnit').style = "display: span"
+        document.getElementById('sek').style = "display: span"
+    }
+
     if (sekunnit == 1) {
         document.getElementById('sek').innerHTML = " sekunti"
     } else {
-        document.getElementById('sek').innerHTML = " sekuntia"
+        document.getElementById('sek').innerText = " sekuntia"
     }
 }  
 
