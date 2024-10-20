@@ -42,7 +42,7 @@ console.log (paivat)
     }
 
     if (paivat <= 0) {
-        document.getElementById('paivat').innerHTML = " . . . . . ."
+        document.getElementById('paivat').innerHTML = " . . . . . . ."
         document.getElementById('pva').style = "display: none"
     } else {
         document.getElementById('sekunnit').style = "display: span"
@@ -56,7 +56,7 @@ console.log (paivat)
     }
 
     if (tunnit <= 0) {
-        document.getElementById('tunnit').innerHTML = " . . . . . ."
+        document.getElementById('tunnit').innerHTML = " . . . . . . ."
         document.getElementById('tun').style = "display: none"
     } else {
         document.getElementById('sekunnit').style = "display: span"
@@ -70,7 +70,7 @@ console.log (paivat)
     }
 
     if (minuutit <= 0) {
-        document.getElementById('minuutit').innerHTML = " . . . . . ."
+        document.getElementById('minuutit').innerHTML = " . . . . . . ."
         document.getElementById('min').style = "display: none"
     } else {
         document.getElementById('minuutit').style = "display: span"
@@ -84,7 +84,7 @@ console.log (paivat)
     }
 
     if (sekunnit == 0) {
-        document.getElementById('sekunnit').innerHTML = " . . . . . ."
+        document.getElementById('sekunnit').innerHTML = " . . . . . . ."
         document.getElementById('sek').style = "display: none"
     } else {
         document.getElementById('sekunnit').style = "display: span"
