@@ -1,7 +1,7 @@
 function aikaLaskuri() {
     const nytHetki = new Date();
     const kuluvaVuosi = nytHetki.getFullYear();
-    const jouluaatto = new Date(`October 21, ${kuluvaVuosi} 00:00:00`);
+    const jouluaatto = new Date(`December 24, ${kuluvaVuosi} 00:00:00`);
     if (nytHetki > jouluaatto) {
         jouluaatto.setFullYear(kuluvaVuosi + 1);
     }
