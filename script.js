@@ -1,100 +1,114 @@
 function aikaLaskuri() {
     const nytHetki = new Date();
     const kuluvaVuosi = nytHetki.getFullYear();
-    const jouluaatto = new Date(`December 24, ${kuluvaVuosi} 00:00:00`);
-
+    const jouluaatto = new Date(`October 21, ${kuluvaVuosi} 00:00:00`);
     if (nytHetki > jouluaatto) {
         jouluaatto.setFullYear(kuluvaVuosi + 1);
     }
 
     const kaikkiSekunnit = (jouluaatto - nytHetki) / 1000;
-    const paivat = Math.floor(kaikkiSekunnit / 3600 / 24);
-    const tunnit = Math.floor(kaikkiSekunnit / 3600) % 24;
-    const minuutit = Math.floor(kaikkiSekunnit / 60) % 60;
-    const sekunnit = Math.floor(kaikkiSekunnit) % 60;
+    const paivatL = Math.floor(kaikkiSekunnit / 3600 / 24);
+    const tunnitL = Math.floor(kaikkiSekunnit / 3600) % 24;
+    const minuutitL = Math.floor(kaikkiSekunnit / 60) % 60;
+    const sekunnitL= Math.floor(kaikkiSekunnit) % 60;
 
-    document.getElementById('yot').innerHTML = paivat + 1;
-    document.getElementById('paivat').innerHTML = paivat;
-    document.getElementById('tunnit').innerHTML = tunnit;
-    document.getElementById('minuutit').innerHTML = minuutit;
-    document.getElementById('sekunnit').innerHTML = sekunnit;
-    if (paivat > 0) { 
-        document.getElementById('otsikko').innerHTML = "Jouluaattoon on aikaa"
+    const yot = document.getElementById('yot')
+    const paivat = document.getElementById('paivat')
+    const tunnit = document.getElementById('tunnit')
+    const minuutit = document.getElementById('minuutit')
+    const sekunnit = document.getElementById('sekunnit')
+    
+    const yo = document.getElementById('yo')
+    const pva = document.getElementById('pva')
+    const tun = document.getElementById('tun')
+    const min = document.getElementById('min')
+    const sek = document.getElementById('sek')
+
+    const otsikko = document.getElementById('otsikko')
+
+    yot.innerHTML = paivatL + 1;
+    paivat.innerHTML = paivatL;
+    tunnit.innerHTML = tunnitL;
+    minuutit.innerHTML = minuutitL;
+    sekunnit.innerHTML = sekunnitL;
+
+    if (paivatL > 0) { 
+        otsikko.innerHTML = "Jouluaattoon on aikaa"
     }
-
-        console.log(paivat)
         
-    if (paivat == 0 && tunnit == 0 && minuutit == 0 && sekunnit == 0 ) {
-        document.getElementById('otsikko').innerHTML = "Nyt on jouluaatto"
+    // Jouluaatto
+    if (paivatL == 0 && tunnitL == 0 && minuutitL == 0 && sekunnitL== 0) {
         document.getElementById('hyvaaJoulua').innerHTML = "Hyvää ja Rauhallista Joulua!"
-        document.getElementById('yot').style = "display: none"
-        document.getElementById('yo').style = "display: none"
-        document.getElementById('ptms').style = "display: none"
         document.getElementById('valiLause').style = "display: none"
+        document.getElementById('ptms').style = "display: none"
+        otsikko.innerHTML = "Nyt on jouluaatto"
+        yot.style = "display: none"
+        yo.style = "display: none"
     }
-console.log (paivat)
+    // Jouluaatto
+
     if (paivat == 0) {
-        document.getElementById('yo').innerHTML = " yö"
-        document.getElementById('paivat').style = "display: none"
-        document.getElementById('pva').style = "display: none"
+        yo.innerHTML = " yö"
+        paivat.style = "display: none"
+        pva.style = "display: none"
     } else {
-        document.getElementById('yo').innerHTML = " yötä"
+        yo.innerHTML = " yötä"
     }
 
-    if (paivat <= 0) {
-        document.getElementById('paivat').innerHTML = " . . . . . . ."
-        document.getElementById('pva').style = "display: none"
+    if (paivatL <= 0) {
+        paivat.innerHTML = " . . . . . . ."
+        pva.style = "display: none"
     } else {
-        document.getElementById('sekunnit').style = "display: span"
-        document.getElementById('sek').style = "display: span"
+        sekunnit.style = "display: span"
+        sek.style = "display: span"
     }
 
     if (paivat == 1) {
-        document.getElementById('pva').innerHTML = " päivä"
+         pva.innerHTML = " päivä"
     } else {
-        document.getElementById('pva').innerHTML = " päivää"
+        pva.innerHTML = " päivää"
     }
 
-    if (tunnit <= 0) {
-        document.getElementById('tunnit').innerHTML = " . . . . . . ."
-        document.getElementById('tun').style = "display: none"
+    if (tunnitL <= 0) {
+        tunnit.innerHTML = " . . . . . . ."
+        tun.style = "display: none"
     } else {
-        document.getElementById('sekunnit').style = "display: span"
-        document.getElementById('sek').style = "display: span"
+        sekunnit.style = "display: span"
+        sek.style = "display: span"
     }
 
-    if (tunnit == 1) {
-        document.getElementById('tun').innerHTML = " tunti"
+    if (tunnitL == 1) {
+        tun.innerHTML = " tunti"
     } else {
-        document.getElementById('tun').innerHTML = " tuntia"
+        tun.innerHTML = " tuntia"
     }
 
-    if (minuutit <= 0) {
-        document.getElementById('minuutit').innerHTML = " . . . . . . ."
-        document.getElementById('min').style = "display: none"
+    if (minuutitL <= 0) {
+        minuutit.innerHTML = " . . . . . . ."
+        min.style = "display: none"
     } else {
-        document.getElementById('minuutit').style = "display: span"
-        document.getElementById('min').style = "display: span"
+        minuutit.style = "display: span"
+        min.style = "display: span"
     }
 
-    if (minuutit == 1) {
-        document.getElementById('min').innerHTML = " minuutti"
+    if (minuutitL == 1) {
+        min.innerHTML = " minuutti"
     } else {
-        document.getElementById('min').innerHTML = " minuuttia"
+        min.innerHTML = " minuuttia"
     }
 
     if (sekunnit == 0) {
-        document.getElementById('sekunnit').innerHTML = " . . . . . . ."
-        document.getElementById('sek').style = "display: none"
+        sekunnit.innerHTML = " . . . . . . ."
+        sek.style = "display: none"
     } else {
-        document.getElementById('sekunnit').style = "display: span"
-        document.getElementById('sek').style = "display: span"
+        sekunnit.style = "display: span"
+        sek.style = "display: span"
     }
 
-    if (sekunnit == 1) {
-        document.getElementById('sek').innerHTML = " sekunti"
+    if (sekunnitL== 1) {
+        sek.innerHTML = " sekunti"
     } else {
-        document.getElementById('sek').innerText = " sekuntia"
+        sek.innerText = " sekuntia"
     }
 }  
 
