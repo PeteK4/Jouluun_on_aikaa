@@ -8,7 +8,7 @@ function aikaLaskuri() {
 
     const kaikkiSekunnit = (jouluaatto - nytHetki) / 1000;
     const paivatL = Math.floor(kaikkiSekunnit / 3600 / 24);
-    const tunnitL = Math.floor(kaikkiSekunnit / 3600) % 24;
+    const tunnitL = Math.floor(kaikkiSekunnit / 3600) % 24 - 1;
     const minuutitL = Math.floor(kaikkiSekunnit / 60) % 60;
     const sekunnitL= Math.floor(kaikkiSekunnit) % 60;
 
@@ -32,7 +32,7 @@ function aikaLaskuri() {
     minuutit.innerHTML = minuutitL;
     sekunnit.innerHTML = sekunnitL;
 
-    if (paivatL > 0) { 
+    if (paivatL >= 0) { 
         otsikko.innerHTML = "Jouluaattoon on aikaa"
     }
         
@@ -47,7 +47,7 @@ function aikaLaskuri() {
     }
     // Jouluaatto
 
-    if (paivat == 0) {
+    if (paivatL == 0) {
         yo.innerHTML = " yö"
         paivat.style = "display: none"
         pva.style = "display: none"
@@ -63,7 +63,7 @@ function aikaLaskuri() {
         sek.style = "display: span"
     }
 
-    if (paivat == 1) {
+    if (paivatL == 1) {
          pva.innerHTML = " päivä"
     } else {
         pva.innerHTML = " päivää"
@@ -97,7 +97,7 @@ function aikaLaskuri() {
         min.innerHTML = " minuuttia"
     }
 
-    if (sekunnit == 0) {
+    if (sekunnitL == 0) {
         sekunnit.innerHTML = " . . . . . . ."
         sek.style = "display: none"
     } else {
