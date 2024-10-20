@@ -9,7 +9,7 @@ function aikaLaskuri() {
 
     const kaikkiSekunnit = (jouluaatto - nytHetki) / 1000;
     const paivat = Math.floor(kaikkiSekunnit / 3600 / 24);
-    const tunnit = Math.floor(kaikkiSekunnit / 3600) % 24 - 1;
+    const tunnit = Math.floor(kaikkiSekunnit / 3600) % 24;
     const minuutit = Math.floor(kaikkiSekunnit / 60) % 60;
     const sekunnit = Math.floor(kaikkiSekunnit) % 60;
 
@@ -18,9 +18,13 @@ function aikaLaskuri() {
     document.getElementById('tunnit').innerHTML = tunnit;
     document.getElementById('minuutit').innerHTML = minuutit;
     document.getElementById('sekunnit').innerHTML = sekunnit;
-    document.getElementById('otsikko').innerHTML = "Jouluaattoon on aikaa"
+    if (paivat > 0) { 
+        document.getElementById('otsikko').innerHTML = "Jouluaattoon on aikaa"
+    }
 
-    if (paivat == 364) {
+        console.log(paivat)
+        
+    if (paivat == 0 && tunnit == 0 && minuutit == 0 && sekunnit == 0 ) {
         document.getElementById('otsikko').innerHTML = "Nyt on jouluaatto"
         document.getElementById('hyvaaJoulua').innerHTML = "Hyvää ja Rauhallista Joulua!"
         document.getElementById('yot').style = "display: none"
@@ -28,7 +32,7 @@ function aikaLaskuri() {
         document.getElementById('ptms').style = "display: none"
         document.getElementById('valiLause').style = "display: none"
     }
-
+console.log (paivat)
     if (paivat == 0) {
         document.getElementById('yo').innerHTML = " yö"
         document.getElementById('paivat').style = "display: none"
@@ -37,8 +41,8 @@ function aikaLaskuri() {
         document.getElementById('yo').innerHTML = " yötä"
     }
 
-    if (paivat == 0) {
-        document.getElementById('paivat').style = "display: none"
+    if (paivat <= 0) {
+        document.getElementById('paivat').innerHTML = " . . . . . ."
         document.getElementById('pva').style = "display: none"
     } else {
         document.getElementById('sekunnit').style = "display: span"
@@ -51,8 +55,8 @@ function aikaLaskuri() {
         document.getElementById('pva').innerHTML = " päivää"
     }
 
-    if (tunnit == 0) {
-        document.getElementById('tunnit').innerHTML = " -----------"
+    if (tunnit <= 0) {
+        document.getElementById('tunnit').innerHTML = " . . . . . ."
         document.getElementById('tun').style = "display: none"
     } else {
         document.getElementById('sekunnit').style = "display: span"
@@ -65,8 +69,8 @@ function aikaLaskuri() {
         document.getElementById('tun').innerHTML = " tuntia"
     }
 
-    if (minuutit == 0) {
-        document.getElementById('minuutit').innerHTML = " -----------"
+    if (minuutit <= 0) {
+        document.getElementById('minuutit').innerHTML = " . . . . . ."
         document.getElementById('min').style = "display: none"
     } else {
         document.getElementById('minuutit').style = "display: span"
@@ -80,7 +84,7 @@ function aikaLaskuri() {
     }
 
     if (sekunnit == 0) {
-        document.getElementById('sekunnit').innerHTML = " -----------"
+        document.getElementById('sekunnit').innerHTML = " . . . . . ."
         document.getElementById('sek').style = "display: none"
     } else {
         document.getElementById('sekunnit').style = "display: span"
